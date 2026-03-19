@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Ghost Buster</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 300px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0a0a0a;
+    color: #f0f0f0;
+    overflow-x: hidden;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #222;
+  }
+
+  .logo {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 6px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-4px); }
+  }
+
+  h1 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.3px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    color: #888;
+    margin-top: 3px;
+  }
+
+  .stats {
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .stat-card {
+    background: #141414;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ff4444;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  .section {
+    padding: 14px 20px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .how-it-works {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .step-icon {
+    width: 28px;
+    height: 28px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .step-text {
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.4;
+  }
+
+  .status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .status-label {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .status-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background: #0d2818;
+    color: #4caf50;
+    border: 1px solid #1a4a2a;
+  }
+
+  #analysis-mode-status.warning {
+    background: #2a1500;
+    color: #ff9800;
+    border-color: #4a2800;
+  }
+
+  .footer {
+    padding: 14px 20px;
+    text-align: center;
+  }
+
+  .footer a {
+    font-size: 11px;
+    color: #444;
+    text-decoration: none;
+  }
+  .footer a:hover { color: #777; }
+
+  .contribute-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #c62828, #e53935);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: opacity 0.2s;
+  }
+  .contribute-btn:hover { opacity: 0.85; }
+
+  .disclaimer {
+    font-size: 10px;
+    color: #2a2a2a;
+    line-height: 1.5;
+    padding: 0 4px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span class="logo">👻</span>
+  <h1>LinkedIn Ghost Buster</h1>
+  <p class="subtitle">Sahte ilanları topluluğun gücüyle tespit et</p>
+</div>
+
+<div class="stats">
+  <div class="stat-card">
+    <span class="stat-number" id="total-reported">—</span>
+    <span class="stat-label">Raporlanan İlan</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number" style="color:#4caf50;" id="total-users">—</span>
+    <span class="stat-label">Aktif Kullanıcı</span>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-title">Durum</p>
+  <div class="status-row">
+    <span class="status-label">Eklenti</span>
+    <span class="status-badge">✓ Aktif</span>
+  </div>
+  <div class="status-row">
+    <span class="status-label">Sunucu</span>
+    <span class="status-badge warning" id="analysis-mode-status">Bağlanıyor…</span>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-title">Nasıl Çalışır?</p>
+  <div class="how-it-works">
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <span class="step-text">LinkedIn'de bir iş ilanı açarsın</span>
+    </div>
+    <div class="step">
+      <div class="step-icon">🗄️</div>
+      <span class="step-text">İlan ID'si topluluk veritabanında aranır</span>
+    </div>
+    <div class="step">
+      <div class="step-icon">🚩</div>
+      <span class="step-text">3+ rapor varsa kırmızı uyarı gösterilir</span>
+    </div>
+    <div class="step">
+      <div class="step-icon">📢</div>
+      <span class="step-text">Sen de raporlayarak katkı sağlarsın</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <button class="contribute-btn" id="github-btn">⭐ GitHub'da İncele</button>
+  <br><br>
+  <a href="#" id="privacy-btn">Gizlilik Politikası</a>
+  <p class="disclaimer">Bu eklenti LinkedIn Corporation'ın resmi bir ürünü değildir ve LinkedIn ile herhangi bir bağlantısı bulunmamaktadır.</p>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

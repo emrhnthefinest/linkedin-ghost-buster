@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Ghost Buster — Gizlilik Politikası</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    max-width: 680px;
+    margin: 40px auto;
+    padding: 0 24px 60px;
+    line-height: 1.7;
+  }
+
+  .header {
+    text-align: center;
+    padding: 40px 0 32px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 32px;
+  }
+
+  .logo { font-size: 48px; margin-bottom: 12px; }
+
+  h1 { font-size: 24px; font-weight: 800; color: #111; }
+
+  .date { font-size: 13px; color: #999; margin-top: 6px; }
+
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin: 28px 0 10px;
+  }
+
+  p { font-size: 14px; color: #555; margin-bottom: 10px; }
+
+  ul { padding-left: 20px; margin-bottom: 10px; }
+
+  li { font-size: 14px; color: #555; margin-bottom: 6px; }
+
+  a { color: #c62828; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .disclaimer {
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #7c6000;
+    margin: 32px 0;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+  .back-link:hover { border-color: #aaa; color: #333; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">👻</div>
+  <h1>LinkedIn Ghost Buster</h1>
+  <p class="date">Son güncelleme: Mart 2026</p>
+</div>
+
+<div class="disclaimer">
+  Bu eklenti LinkedIn Corporation'ın resmi bir ürünü değildir ve LinkedIn ile herhangi bir bağlantısı bulunmamaktadır.
+</div>
+
+<h2>1. Toplanan Veriler</h2>
+<p>LinkedIn Ghost Buster eklentisi yalnızca aşağıdaki verileri toplar:</p>
+<ul>
+  <li>Ziyaret ettiğiniz LinkedIn iş ilanlarının <strong>Job ID numaraları</strong> (URL'den okunur, profilinize erişilmez)</li>
+  <li>Bir ilanı raporlarken seçtiğiniz <strong>rapor sebebi</strong></li>
+</ul>
+<p>Adınız, e-posta adresiniz, profil bilgileriniz veya herhangi bir kişisel veri hiçbir şekilde toplanmaz ya da işlenmez.</p>
+
+<h2>2. Veriler Nasıl Kullanılır?</h2>
+<p>Toplanan Job ID ve rapor sebepleri, sahte veya hayalet iş ilanlarını tespit etmek amacıyla Cloudflare Workers altyapısında anonim olarak saklanır. Bu veriler:</p>
+<ul>
+  <li>Üçüncü taraflarla paylaşılmaz</li>
+  <li>Reklam veya profilleme amaçlı kullanılmaz</li>
+  <li>Kişisel kimliğinizle ilişkilendirilmez</li>
+</ul>
+
+<h2>3. Rate Limiting (Tekrar Raporlamayı Engelleme)</h2>
+<p>Mükerrer raporlamaları önlemek amacıyla IP adresiniz, raporladığınız ilan ID'siyle birlikte <strong>SHA-256 ile hash'lenerek</strong> saklanır. Ham IP adresiniz hiçbir zaman saklanmaz. Bu bilgi yalnızca aynı ilanı tekrar raporlamanızı engellemek amacıyla kullanılır.</p>
+
+<h2>4. Üçüncü Taraf Hizmetler</h2>
+<p>Eklenti, rapor verilerini saklamak için <strong>Cloudflare Workers KV</strong> hizmetini kullanmaktadır. Cloudflare'in gizlilik politikasına <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com</a> adresinden ulaşabilirsiniz.</p>
+
+<h2>5. Veri Saklama Süresi</h2>
+<ul>
+  <li>İlan rapor verileri <strong>90 gün</strong> süreyle saklanır, sonrasında otomatik olarak silinir.</li>
+  <li>Rate limit verileri (hash'lenmiş IP + ilan ID çifti) kalıcı olarak tutulur.</li>
+</ul>
+
+<h2>6. Çerezler ve İzleme</h2>
+<p>Eklenti herhangi bir çerez kullanmamakta, analitik takip yapmamakta ve reklamcılık ağlarıyla bilgi paylaşmamaktadır.</p>
+
+<h2>7. İletişim</h2>
+<p>Gizlilik politikamızla ilgili sorularınız için <a href="https://github.com/2007emrhn/linkedin-ghost-buster/issues" target="_blank" rel="noopener">GitHub Issues</a> üzerinden iletişime geçebilirsiniz.</p>
+
+</body>
+</html>

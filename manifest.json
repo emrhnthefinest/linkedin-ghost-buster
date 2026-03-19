@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Ghost Buster",
+  "version": "1.0.2",
+  "description": "Topluluk gücüyle LinkedIn'deki sahte ve hayalet iş ilanlarını tespit et.",
+  "permissions": [],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://ghostbuster.2007emrhn.workers.dev/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.linkedin.com/jobs/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "privacy.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

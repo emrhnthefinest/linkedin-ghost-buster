@@ -1,0 +1,149 @@
+/* LinkedIn Ghost Buster - Content Styles v1.0.2 */
+
+#ghostbuster-warning {
+  margin: 12px 0;
+  animation: gb-slide-in 0.3s ease;
+}
+
+#ghostbuster-report {
+  margin: 16px 0;
+}
+
+@keyframes gb-slide-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Banner */
+.gb-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+
+.gb-danger {
+  background: #fff2f2;
+  border: 1.5px solid #e53935;
+  color: #c62828;
+}
+
+.gb-caution {
+  background: #fff8e1;
+  border: 1.5px solid #f9a825;
+  color: #e65100;
+}
+
+.gb-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.gb-content {
+  flex: 1;
+}
+
+.gb-content strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.gb-content p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.gb-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.5;
+  font-size: 16px;
+  padding: 0;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: opacity 0.15s;
+}
+.gb-close:hover { opacity: 1; }
+
+/* Report Area */
+.gb-report-area {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.gb-report-btn {
+  background: none;
+  border: 1.5px solid #ddd;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s;
+}
+.gb-report-btn:hover {
+  border-color: #e53935;
+  color: #e53935;
+  background: #fff5f5;
+}
+
+.gb-report-form {
+  margin-top: 10px;
+  padding: 14px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.gb-form-title {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.gb-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gb-reason-btn {
+  background: white;
+  border: 1.5px solid #ddd;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #444;
+  transition: all 0.2s;
+}
+.gb-reason-btn:hover {
+  border-color: #e53935;
+  color: #e53935;
+}
+.gb-reason-btn.selected {
+  background: #e53935;
+  border-color: #e53935;
+  color: white;
+}
+.gb-reason-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.gb-thanks {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #2e7d32;
+  font-weight: 600;
+}
