@@ -91,6 +91,6 @@ MIT © 2026 [Emirhan](https://github.com/2007emrhn) — Emrhn Medya
 
 ⭐ If you find this useful, please give it a star!
 
-[🌐 Website](https://2007emrhn.github.io/linkedin-ghost-buster) · [GitHub](https://github.com/2007emrhn)
+[🌐 Website](https://emrhnthefinest.github.io/linkedin-ghost-buster/) · [GitHub](https://github.com/2007emrhn)
 
 </div>
