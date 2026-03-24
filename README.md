@@ -1,22 +1,21 @@
 <div align="center">
 
 # 👻 LinkedIn Ghost Buster
+**The definitive community-driven shield against phantom job listings.**
 
-**Identify fake and ghost job listings on LinkedIn with the power of community.**
-
-[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/2007emrhn/linkedin-ghost-buster)
-[![Version](https://img.shields.io/badge/version-1.0.2-red?style=flat-square)](https://github.com/2007emrhn/linkedin-ghost-buster/releases)
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/emrhnthefinest/linkedin-ghost-buster)
+[![Version](https://img.shields.io/badge/version-1.0.2-red?style=flat-square)](https://github.com/emrhnthefinest/linkedin-ghost-buster/releases)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Cloudflare Workers](https://img.shields.io/badge/Backend-Cloudflare_Workers-F6821F?style=flat-square&logo=cloudflare&logoColor=white)](https://workers.cloudflare.com)
 
 <br>
 
-> **Stop wasting time applying to jobs that don't exist.**
-> Ghost Buster automatically checks a community-driven database to flag reported listings instantly.
+> **"Time is the most valuable asset of a job seeker."**
+> Ghost Buster leverages high-speed edge computing and decentralized community reports to flag misleading listings before you even click "Apply."
 
 ---
 
-[English](#english-version) | [Türkçe](#türkçe-versiyon)
+[English Documentation](#english-version) | [Türkçe Dokümantasyon](#türkçe-versiyon)
 
 </div>
 
@@ -24,73 +23,59 @@
 
 <a name="english-version"></a>
 
-## ✨ Key Features (English)
+## 🚀 Mission & Overview (English)
 
-- 🚩 **Real-time Alerts** — A warning banner appears automatically when you view a reported listing.
-- 👥 **Community-Driven** — Verification requires at least 3 reports to prevent manipulation.
-- 🔒 **Zero Ban Risk** — No scraping, no profile data access. Completely compliant with LinkedIn TOS.
-- 📊 **Live Stats** — Monitor community activity and total flagged listings in real-time.
-- 🆓 **100% Free** — No ads, no fees, no account required. Just install and protect yourself.
+In today's recruitment landscape, "Ghost Jobs" have become a systemic issue, cluttering the ecosystem and wasting candidate efforts. **Ghost Buster** provides a lightweight, non-intrusive layer that identifies these listings in real-time. 
 
-## ⚠️ Why is it different?
+Built with a **Privacy-First** philosophy, it operates entirely outside of LinkedIn’s internal tracking mechanisms.
 
-Unlike other tools, Ghost Buster **DOES NOT** scrape LinkedIn:
-- No HTML parsing or data extraction.
-- No access to your private profile or activity.
-- No automated actions on your behalf.
-- **Result:** Invisible to LinkedIn's anti-bot systems. Your account is safe.
+### ✨ Key Advantages
 
-## 🛠 Tech Stack
+- 🛡️ **Zero-Footprint Architecture** — Operates without traditional scraping. It is virtually invisible to LinkedIn's automated detection systems, ensuring 100% account safety.
+- ⚡ **Edge-Powered Efficiency** — Utilizing Cloudflare Workers, the extension performs sub-millisecond lookups against our global community database.
+- 🤝 **Consensus-Based Reporting** — To maintain high data integrity, a listing is only flagged after reaching a specific threshold of independent community reports.
+- 🔒 **Privacy by Design** — We do not read your profile, messages, or private data. We only process anonymized Job IDs.
 
-| Layer | Technology |
-|--------|-----------|
-| Extension | Chrome Manifest V3 |
-| Backend | Cloudflare Workers (Edge Computing) |
-| Database | Cloudflare KV Storage |
-| Security | SHA-256 IP Hashing & Rate Limiting |
-| Architecture | Privacy-Focused URL Mapping (Proprietary) |
+### 🛠 Technical Specification & Source Policy
+
+To protect our proprietary anti-detection logic and the integrity of the reporting network, this repository currently hosts the **Client-Side Interface (HTML/CSS)** and documentation. 
+
+> **Note for Developers & Partners:** The backend logic and core engine remain private to prevent malicious manipulation of the reporting system. If you are a developer, investor, or recruiter interested in a deeper technical deep-dive or partnership, please reach out via email.
 
 ---
 
 <a name="türkçe-versiyon"></a>
 
-## ✨ Özellikler (Türkçe)
+## 🚀 Vizyon ve Genel Bakış (Türkçe)
 
-- 🚩 **Anlık Uyarı** — Raporlanmış bir ilana girdiğinde kırmızı banner otomatik çıkar.
-- 👥 **Topluluk Sistemi** — Minimum 3 rapor eşiği ile sistem manipülasyonu engellenir.
-- 🔒 **Ban Riski Sıfır** — Scraping yok, profil verisi yok. LinkedIn kurallarına %100 uyumlu.
-- 📊 **Canlı İstatistik** — Kaç ilan raporlandı, topluluk ne kadar aktif anlık takip et.
-- 🆓 **Tamamen Ücretsiz** — Reklam yok, ücret yok, hesap açma zorunluluğu yok.
+Günümüz iş piyasasında "Hayalet İlanlar", ekosistemi kirleten ve adayların emeğini boşa harcayan sistemik bir sorun haline geldi. **Ghost Buster**, bu ilanları gerçek zamanlı olarak tespit eden, hafif ve kullanıcı dostu bir koruma katmanı sağlar.
 
-## ⚠️ Neden Diğer Eklentilerden Farklı?
+### ✨ Öne Çıkan Özellikler
 
-Piyasadaki çoğu eklentinin aksine Ghost Buster **scraping yapmaz**:
-- Sayfa yapısını kazımaz, veri çekmez.
-- Kullanıcı adına işlem yapmaz.
-- **Sonuç:** LinkedIn sistemleri tarafından tespit edilemez. Hesabınız güvende kalır.
+- 🛡️ **Sıfır İz Mimarisi** — Geleneksel scraping (kazıma) yöntemlerini kullanmaz. LinkedIn'in bot tespit sistemlerine yakalanmaz, hesabınızı riske atmaz.
+- ⚡ **Edge Computing Gücü** — Cloudflare Workers kullanarak, milisaniyeler içinde topluluk veritabanı ile eşleşme sağlar.
+- 🤝 **Konsensüs Odaklı Raporlama** — Veri güvenliğini korumak adına, bir ilan ancak birden fazla bağımsız rapor aldığında işaretlenir.
+- 🔒 **Gizlilik Odaklı** — Profilinizi, mesajlarınızı veya özel verilerinizi okumayız. Sadece anonimleştirilmiş İlan ID'leri işlenir.
+
+### 🛠 Kaynak Kod Politikası
+
+Antit-tespit mantığımızı ve raporlama ağımızın güvenliğini korumak amacıyla, bu depo şu an için **Arayüz Dosyalarını (HTML/CSS)** ve dokümantasyonu içermektedir. 
+
+> **Geliştiriciler ve İş Ortakları İçin Not:** Arka plan mantığı ve ana motor, raporlama sisteminin manipüle edilmesini önlemek amacıyla gizli tutulmaktadır. Teknik detaylar veya iş birliği ile ilgilenen profesyoneller mail yoluyla iletişime geçebilir.
 
 ---
 
-## 🤝 Contributing / Katkı Sağla
+## 📩 Contact & Support / İletişim
 
-1. Fork the project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+Whether you are a fellow developer, a curious user, or a potential partner, I'm open to discussions.
+
+**Email:** [wellsteam54@gmail.com](mailto:wellsteam54@gmail.com)
+
+---
 
 ## 📄 License / Lisans
-
 MIT © 2026 [Emirhan](https://github.com/2007emrhn) — Emrhn Medya
 
----
-
 <div align="center">
-
-**Not affiliated with LinkedIn Corporation.**
-
-⭐ If you find this useful, please give it a star!
-
-[🌐 Website](https://emrhnthefinest.github.io/linkedin-ghost-buster/) · [GitHub](https://github.com/2007emrhn)
-
+⭐ If you believe in a transparent job market, give this project a star!
 </div>
