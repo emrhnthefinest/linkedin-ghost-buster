@@ -4,7 +4,7 @@
 **The definitive community-driven shield against phantom job listings.**
 
 [![Website](https://img.shields.io/badge/Official-Website-blue?style=flat-square&logo=googlechrome&logoColor=white)](https://emrhnthefinest.github.io/linkedin-ghost-buster/)
-[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/emrhnthefinest/linkedin-ghost-buster)
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/linkedin-ghost-buster/andgigobndoagmkclkojooneemelgaef?authuser=0&hl=tr)
 [![Version](https://img.shields.io/badge/version-1.0.2-red?style=flat-square)](https://github.com/emrhnthefinest/linkedin-ghost-buster/releases)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Cloudflare Workers](https://img.shields.io/badge/Backend-Cloudflare_Workers-F6821F?style=flat-square&logo=cloudflare&logoColor=white)](https://workers.cloudflare.com)
