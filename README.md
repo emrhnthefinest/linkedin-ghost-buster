@@ -28,22 +28,6 @@
 
 ---
 
-## 🚀 Kurulum
-
-### Yöntem 1: Manuel Kurulum (Şu An)
-
-1. Bu repoyu indir → **Code → Download ZIP**
-2. ZIP'i bir klasöre çıkar
-3. Chrome'da `chrome://extensions` adresine git
-4. Sağ üstten **Geliştirici modu**nu aç
-5. **Paketlenmemiş öğe yükle** → klasörü seç
-6. LinkedIn'de bir iş ilanı aç → sağ altta 👻 butonu görünüyorsa hazırsın!
-
-### Yöntem 2: Chrome Web Store *(Yakında)*
-
-Chrome Web Store'da yayına alınma sürecinde.
-
----
 
 ## ⚠️ Neden Diğer Eklentilerden Farklı?
 
@@ -55,26 +39,9 @@ Piyasadaki çoğu LinkedIn eklentisi **scraping** yapıyor:
 
 **Ghost Buster bunların hiçbirini yapmıyor.**
 
-Sadece URL'den iş ilanı ID'sini okuyor. Profil verisine dokunmuyor. Bu yüzden ban riski sıfır.
 
 ---
 
-## 🛠️ Teknik Detaylar
-
-### Mimari
-
-```
-Chrome Extension (content.js)
-        │
-        ▼
-URL'den Job ID okunur
-        │
-        ▼
-Cloudflare Workers API
-        │
-        ▼
-KV Storage (rapor veritabanı)
-```
 
 ### Stack
 
@@ -86,42 +53,7 @@ KV Storage (rapor veritabanı)
 | Rate Limiting | SHA-256 IP Hash |
 | SPA Desteği | MutationObserver + setInterval fallback |
 
-### API Endpointleri
 
-```
-GET  /check/:jobId   → İlan rapor durumunu sorgular
-POST /report         → Yeni rapor gönderir
-GET  /stats          → Global istatistikleri döner
-```
-
----
-
-## 📁 Dosya Yapısı
-
-```
-linkedin-ghost-buster/
-├── manifest.json       # Chrome Extension config
-├── content.js          # Ana eklenti kodu (LinkedIn'e inject edilir)
-├── content.css         # Uyarı banner stilleri
-├── popup.html          # Popup arayüzü
-├── popup.js            # Popup mantığı
-├── style.css           # Genel stiller
-├── privacy.html        # Gizlilik politikası
-├── icon16.png          # Extension ikonları
-├── icon48.png
-├── icon128.png
-└── index.html          # GitHub Pages tanıtım sitesi
-```
-
----
-
-## 🔒 Gizlilik
-
-- ✅ Kişisel bilgi toplanmıyor
-- ✅ Profil verisi okunmuyor
-- ✅ Sadece iş ilanı ID'si işleniyor
-- ✅ Rate limit için IP SHA-256 ile hash'leniyor (ham IP saklanmıyor)
-- ✅ Rapor verileri 90 gün sonra otomatik siliniyor
 
 [Gizlilik Politikası →](privacy.html)
 
@@ -135,15 +67,6 @@ linkedin-ghost-buster/
 4. Push'la (`git push origin feature/yeni-ozellik`)
 5. Pull Request aç
 
-### Yapılacaklar
-
-- [ ] Chrome Web Store yayını
-- [ ] Firefox desteği
-- [ ] İngilizce arayüz seçeneği
-- [ ] İlan geçmişi görüntüleme
-- [ ] Bildirim sistemi
-
----
 
 ## 📄 Lisans
 
