@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LinkedIn Ghost Buster — Hayalet İlanları Tespit Et</title>
+<title id="page-title">LinkedIn Ghost Buster — Hayalet İlanları Tespit Et</title>
 <meta name="description" content="Topluluk gücüyle LinkedIn'deki sahte ve hayalet iş ilanlarını tespit eden ücretsiz Chrome eklentisi.">
 <meta property="og:title" content="LinkedIn Ghost Buster">
 <meta property="og:description" content="Varolmayan işlere başvurarak zamanını boşa harcama.">
@@ -32,6 +32,28 @@ body {
   color: #e8e8e8;
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
+}
+
+/* 🌐 DİL DEĞİŞTİRİCİ STİLLERİ */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg3);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  margin-left: 15px;
+}
+.lang-btn {
+  background: none; border: none; color: var(--gray);
+  font-size: 11px; font-weight: 800; cursor: pointer;
+  padding: 5px 12px; border-radius: 20px; transition: all 0.3s;
+  text-transform: uppercase;
+}
+.lang-btn.active {
+  background: var(--red); color: #fff;
+  box-shadow: 0 0 10px rgba(229, 34, 34, 0.4);
 }
 
 /* ── NAV ── */
@@ -319,38 +341,42 @@ footer a:hover { color:#fff; }
   <div class="nav-inner">
     <a href="#" class="nav-logo"><span>👻</span> LinkedIn Ghost Buster</a>
     <div class="nav-links">
-      <a href="#nasil">Nasıl Çalışır?</a>
-      <a href="#fark">Karşılaştırma</a>
-      <a href="https://github.com/emrhnthefinest" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://github.com/emrhnthefinest/linkedin-ghost-buster" target="_blank" rel="noopener" class="nav-cta">Ücretsiz İndir</a>
+      <a href="#nasil" data-tr="Nasıl Çalışır?" data-en="How it Works?">Nasıl Çalışır?</a>
+      <a href="#fark" data-tr="Karşılaştırma" data-en="Comparison">Karşılaştırma</a>
+      <a href="https://github.com/2007emrhn/linkedin-ghost-buster" target="_blank" rel="noopener">GitHub</a>
+      
+      <div class="lang-switcher">
+        <button class="lang-btn" onclick="changeLang('tr')" id="btn-tr">TR</button>
+        <button class="lang-btn" onclick="changeLang('en')" id="btn-en">EN</button>
+      </div>
+
+      <a href="https://github.com/2007emrhn/linkedin-ghost-buster" target="_blank" rel="noopener" class="nav-cta" data-tr="Ücretsiz İndir" data-en="Download Free">Ücretsiz İndir</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
-      Topluluk Gücüyle Korunun · Ücretsiz · Açık Kaynak
+      <span data-tr="Topluluk Gücüyle Korunun · Ücretsiz · Açık Kaynak" data-en="Community Powered · Free · Open Source">Topluluk Gücüyle Korunun · Ücretsiz · Açık Kaynak</span>
     </div>
     <h1 class="hero-title">LINKEDIN<br><span class="red">GHOST</span><br>BUSTER</h1>
-    <p class="hero-sub">
+    <p class="hero-sub" data-tr="LinkedIn'deki sahte ve hayalet iş ilanlarını tespit et. Varolmayan işlere başvurarak zamanını boşa harcama." data-en="Identify fake and ghost job listings on LinkedIn. Stop wasting time applying to jobs that don't exist.">
       LinkedIn'deki <strong>sahte ve hayalet iş ilanlarını</strong> tespit et.
       Varolmayan işlere başvurarak zamanını boşa harcama.
     </p>
     <div class="hero-buttons">
-      <a href="https://github.com/emrhnthefinest/linkedin-ghost-buster" target="_blank" rel="noopener" class="btn btn-primary">
+      <a href="https://github.com/2007emrhn/linkedin-ghost-buster" target="_blank" rel="noopener" class="btn btn-primary" data-tr="👻 Chrome'a Ücretsiz Ekle" data-en="👻 Add to Chrome - Free">
         👻 Chrome'a Ücretsiz Ekle
       </a>
-      <a href="#nasil" class="btn btn-secondary">Nasıl Çalışır?</a>
+      <a href="#nasil" class="btn btn-secondary" data-tr="Nasıl Çalışır?" data-en="How it Works?">Nasıl Çalışır?</a>
     </div>
   </div>
 </section>
 
-<!-- MOCKUP -->
 <div class="mockup-section">
   <div class="browser-mock">
     <div class="browser-bar">
@@ -365,9 +391,9 @@ footer a:hover { color:#fff; }
       <div class="alert-banner">
         <div class="alert-emoji">🚫</div>
         <div>
-          <div class="alert-title">Bu İlan Topluluk Tarafından Raporlandı!</div>
-          <div class="alert-desc">Bu iş ilanı daha önce birden fazla kullanıcı tarafından işaretlendi.</div>
-          <div class="alert-count">⚠ 7 rapor · Hayalet İlan</div>
+          <div class="alert-title" data-tr="Bu İlan Topluluk Tarafından Raporlandı!" data-en="Listing Reported by Community!">Bu İlan Topluluk Tarafından Raporlandı!</div>
+          <div class="alert-desc" data-tr="Bu iş ilanı daha önce birden fazla kullanıcı tarafından işaretlendi." data-en="This job listing has been flagged by multiple users before.">Bu iş ilanı daha önce birden fazla kullanıcı tarafından işaretlendi.</div>
+          <div class="alert-count" data-tr="⚠ 7 rapor · Hayalet İlan" data-en="⚠ 7 reports · Ghost Listing">⚠ 7 rapor · Hayalet İlan</div>
         </div>
       </div>
       <div class="job-block">
@@ -378,11 +404,10 @@ footer a:hover { color:#fff; }
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
 <section class="section" id="nasil">
   <div class="section-inner">
-    <div class="section-label">Nasıl Çalışır?</div>
-    <h2 class="section-title">4 Adımda<br>Koruma</h2>
+    <div class="section-label" data-tr="Nasıl Çalışır?" data-en="How it Works?">Nasıl Çalışır?</div>
+    <h2 class="section-title" data-tr="4 Adımda<br>Koruma" data-en="Protection in<br>4 Steps">4 Adımda<br>Koruma</h2>
   </div>
 </section>
 
@@ -391,108 +416,105 @@ footer a:hover { color:#fff; }
     <div class="steps">
       <div class="step">
         <div class="step-num">🔍</div>
-        <div class="step-title">İlanı Aç</div>
-        <div class="step-desc">LinkedIn'de herhangi bir iş ilanına tıkla.</div>
+        <div class="step-title" data-tr="İlanı Aç" data-en="Open Listing">İlanı Aç</div>
+        <div class="step-desc" data-tr="LinkedIn'de herhangi bir iş ilanına tıkla." data-en="Click on any job listing on LinkedIn.">LinkedIn'de herhangi bir iş ilanına tıkla.</div>
       </div>
       <div class="step">
         <div class="step-num">🗄</div>
-        <div class="step-title">Veritabanı Sorgusu</div>
-        <div class="step-desc">İlan ID'si anında topluluk veritabanında aranır.</div>
+        <div class="step-title" data-tr="Veritabanı Sorgusu" data-en="DB Query">Veritabanı Sorgusu</div>
+        <div class="step-desc" data-tr="İlan ID'si anında topluluk veritabanında aranır." data-en="Job ID is instantly searched in the community database.">İlan ID'si anında topluluk veritabanında aranır.</div>
       </div>
       <div class="step">
         <div class="step-num">🚩</div>
-        <div class="step-title">Uyarı Gösterilir</div>
-        <div class="step-desc">3 veya daha fazla rapor varsa kırmızı uyarı banner'ı çıkar.</div>
+        <div class="step-title" data-tr="Uyarı Gösterilir" data-en="Alert Displayed">Uyarı Gösterilir</div>
+        <div class="step-desc" data-tr="3 veya daha fazla rapor varsa kırmızı uyarı banner'ı çıkar." data-en="If there are 3+ reports, a red alert banner appears.">3 veya daha fazla rapor varsa kırmızı uyarı banner'ı çıkar.</div>
       </div>
       <div class="step">
         <div class="step-num">📢</div>
-        <div class="step-title">Topluluğa Katkı</div>
-        <div class="step-desc">Sen de raporlayarak diğerlerini korursun.</div>
+        <div class="step-title" data-tr="Topluluğa Katkı" data-en="Contribute">Topluluğa Katkı</div>
+        <div class="step-desc" data-tr="Sen de raporlayarak diğerlerini korursun." data-en="Protect others by reporting fake listings.">Sen de raporlayarak diğerlerini korursun.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="section">
   <div class="section-inner">
-    <div class="section-label">Neden Biz?</div>
-    <h2 class="section-title">Diğer Eklentiler<br><span style="color:var(--red)">Ban Getirir.</span><br>Biz Getirmeyiz.</h2>
-    <p class="section-sub">Piyasadaki çoğu LinkedIn eklentisi scraping yapıyor. Ghost Buster yapmıyor.</p>
+    <div class="section-label" data-tr="Neden Biz?" data-en="Why Us?">Neden Biz?</div>
+    <h2 class="section-title" data-tr="Diğer Eklentiler<br><span style='color:var(--red)'>Ban Getirir.</span><br>Biz Getirmeyiz." data-en="Other Extensions<br><span style='color:var(--red)'>Cause Bans.</span><br>We Don't.">Diğer Eklentiler<br><span style="color:var(--red)">Ban Getirir.</span><br>Biz Getirmeyiz.</h2>
+    <p class="section-sub" data-tr="Piyasadaki çoğu LinkedIn eklentisi scraping yapıyor. Ghost Buster yapmıyor." data-en="Most LinkedIn extensions on the market use scraping. Ghost Buster does not.">Piyasadaki çoğu LinkedIn eklentisi scraping yapıyor. Ghost Buster yapmıyor.</p>
     <div class="why-grid">
       <div class="why-card danger">
         <span class="why-icon">⚠️</span>
-        <div class="why-card-title red">Diğer Eklentiler</div>
-        <p>LinkedIn'in HTML yapısını kazıyor, profil verilerini çekiyor, kullanıcı adına işlem yapıyor. LinkedIn bunu tespit ediyor ve hesabı kısıtlıyor ya da tamamen ban ediyor.</p>
+        <div class="why-card-title red" data-tr="Diğer Eklentiler" data-en="Other Extensions">Diğer Eklentiler</div>
+        <p data-tr="LinkedIn'in HTML yapısını kazıyor, profil verilerini çekiyor, kullanıcı adına işlem yapıyor. LinkedIn bunu tespit ediyor ve hesabı kısıtlıyor ya da tamamen ban ediyor." data-en="Scrapes LinkedIn's HTML structure, pulls profile data, and acts on behalf of the user. LinkedIn detects this and restricts or bans the account.">LinkedIn'in HTML yapısını kazıyor, profil verilerini çekiyor, kullanıcı adına işlem yapıyor. LinkedIn bunu tespit ediyor ve hesabı kısıtlıyor ya da tamamen ban ediyor.</p>
       </div>
       <div class="why-card">
         <span class="why-icon">✅</span>
-        <div class="why-card-title">Ghost Buster</div>
-        <p>Sadece URL'den iş ilanı ID'sini okuyor. Profil verisine hiç dokunmuyor. Scraping yok, bot davranışı yok. LinkedIn'in kullanım koşullarını ihlal eden hiçbir şey yok.</p>
+        <div class="why-card-title" data-tr="Ghost Buster" data-en="Ghost Buster">Ghost Buster</div>
+        <p data-tr="Sadece URL'den iş ilanı ID'sini okuyor. Profil verisine hiç dokunmuyor. Scraping yok, bot davranışı yok. LinkedIn'in kullanım koşullarını ihlal eden hiçbir şey yok." data-en="Only reads the job ID from the URL. Never touches profile data. No scraping, no bot behavior. Nothing that violates LinkedIn's terms of service.">Sadece URL'den iş ilanı ID'sini okuyor. Profil verisine hiç dokunmuyor. Scraping yok, bot davranışı yok. LinkedIn'in kullanım koşullarını ihlal eden hiçbir şey yok.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPARISON TABLE -->
 <section class="section" id="fark" style="padding-top:0;">
   <div class="section-inner">
     <table class="diff-table">
       <thead>
         <tr>
-          <th>Özellik</th>
+          <th data-tr="Özellik" data-en="Feature">Özellik</th>
           <th>Ghost Buster</th>
-          <th>Diğer Eklentiler</th>
+          <th data-tr="Diğer Eklentiler" data-en="Other Extensions">Diğer Eklentiler</th>
         </tr>
       </thead>
       <tbody>
         <tr class="highlight">
-          <td>Ban Riski</td>
-          <td><span class="tag-yes">Sıfır Risk</span></td>
-          <td><span class="tag-no">Yüksek Risk</span></td>
+          <td data-tr="Ban Riski" data-en="Ban Risk">Ban Riski</td>
+          <td><span class="tag-yes" data-tr="Sıfır Risk" data-en="Zero Risk">Sıfır Risk</span></td>
+          <td><span class="tag-no" data-tr="Yüksek Risk" data-en="High Risk">Yüksek Risk</span></td>
         </tr>
         <tr>
-          <td>Kişisel Veri Toplama</td>
-          <td><span class="tag-yes">Hayır</span></td>
-          <td><span class="tag-no">Profil Verisi</span></td>
+          <td data-tr="Kişisel Veri Toplama" data-en="Data Collection">Kişisel Veri Toplama</td>
+          <td><span class="tag-yes" data-tr="Hayır" data-en="None">Hayır</span></td>
+          <td><span class="tag-no" data-tr="Profil Verisi" data-en="Profile Data">Profil Verisi</span></td>
         </tr>
         <tr>
           <td>Scraping</td>
-          <td><span class="tag-yes">Yok</span></td>
-          <td><span class="tag-no">Var</span></td>
+          <td><span class="tag-yes" data-tr="Yok" data-en="No">Yok</span></td>
+          <td><span class="tag-no" data-tr="Var" data-en="Yes">Var</span></td>
         </tr>
         <tr>
-          <td>Topluluk Sistemi</td>
+          <td data-tr="Topluluk Sistemi" data-en="Community System">Topluluk Sistemi</td>
           <td><span class="tag-yes">✓</span></td>
           <td><span class="tag-no">✗</span></td>
         </tr>
         <tr>
-          <td>Manipülasyon Koruması</td>
-          <td><span class="tag-yes">Min. 3 Rapor</span></td>
-          <td><span class="tag-no">Yok</span></td>
+          <td data-tr="Manipülasyon Koruması" data-en="Anti-Manipulation">Manipülasyon Koruması</td>
+          <td><span class="tag-yes" data-tr="Min. 3 Rapor" data-en="Min. 3 Reports">Min. 3 Rapor</span></td>
+          <td><span class="tag-no" data-tr="Yok" data-en="None">Yok</span></td>
         </tr>
         <tr>
-          <td>Ücret</td>
-          <td><span class="tag-yes">Ücretsiz</span></td>
-          <td><span class="tag-no">Çoğu Ücretli</span></td>
+          <td data-tr="Ücret" data-en="Cost">Ücret</td>
+          <td><span class="tag-yes" data-tr="Ücretsiz" data-en="Free">Ücretsiz</span></td>
+          <td><span class="tag-no" data-tr="Çoğu Ücretli" data-en="Mostly Paid">Çoğu Ücretli</span></td>
         </tr>
         <tr>
-          <td>Açık Kaynak</td>
-          <td><span class="tag-yes">✓ GitHub</span></td>
-          <td><span class="tag-no">Kapalı Kaynak</span></td>
+          <td data-tr="Açık Kaynak" data-en="Open Source">Açık Kaynak</td>
+          <td><span class="tag-yes" data-tr="✓ GitHub" data-en="✓ GitHub">✓ GitHub</span></td>
+          <td><span class="tag-no" data-tr="Kapalı Kaynak" data-en="Closed Source">Kapalı Kaynak</span></td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
   <div class="cta-glow"></div>
-  <h2>Hayalet İlanlara<br><span style="color:var(--red)">Son Ver.</span></h2>
-  <p>Ücretsiz, açık kaynak ve ban riski sıfır. Hemen yükle.</p>
-  <a href="https://github.com/emrhnthefinest/linkedin-ghost-buster" target="_blank" rel="noopener"
-     class="btn btn-primary" style="font-size:16px;padding:16px 36px;">
+  <h2 data-tr="Hayalet İlanlara<br><span style='color:var(--red)'>Son Ver.</span>" data-en="Stop Chasing<br><span style='color:var(--red)'>Ghost Jobs.</span>">Hayalet İlanlara<br><span style="color:var(--red)">Son Ver.</span></h2>
+  <p data-tr="Ücretsiz, açık kaynak ve ban riski sıfır. Hemen yükle." data-en="Free, open-source and zero ban risk. Install now.">Ücretsiz, açık kaynak ve ban riski sıfır. Hemen yükle.</p>
+  <a href="https://github.com/2007emrhn/linkedin-ghost-buster" target="_blank" rel="noopener"
+     class="btn btn-primary" style="font-size:16px;padding:16px 36px;" data-tr="👻 Ücretsiz İndir — Chrome" data-en="👻 Download Free — Chrome">
     👻 Ücretsiz İndir — Chrome
   </a>
   <p style="margin-top:20px;font-size:12px;color:var(--gray);">
@@ -500,21 +522,44 @@ footer a:hover { color:#fff; }
   </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>
     © 2026 LinkedIn Ghost Buster ·
-    <a href="https://github.com/emrhnthefinest/linkedin-ghost-buster" target="_blank" rel="noopener">GitHub</a> ·
-    <a href="privacy.html">Gizlilik Politikası</a>
+    <a href="https://github.com/2007emrhn/linkedin-ghost-buster" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="mailto:2007emrhn@gmail.com">Contact</a>
     <br><br>
-    LinkedIn Corporation ile herhangi bir bağlantısı bulunmamaktadır.
+    <span data-tr="LinkedIn Corporation ile herhangi bir bağlantısı bulunmamaktadır." data-en="Not affiliated with LinkedIn Corporation.">LinkedIn Corporation ile herhangi bir bağlantısı bulunmamaktadır.</span>
   </p>
 </footer>
 
-<!-- Floating Action Button -->
-<a href="https://github.com/emrhnthefinest/linkedin-ghost-buster" target="_blank" rel="noopener" class="fab">
-  👻 İndir
+<a href="https://github.com/2007emrhn/linkedin-ghost-buster" target="_blank" rel="noopener" class="fab">
+  <span data-tr="👻 İndir" data-en="👻 Download">👻 İndir</span>
 </a>
+
+<script>
+// 🚀 DİL YÖNETİMİ
+const titles = {
+    tr: "LinkedIn Ghost Buster — Hayalet İlanları Tespit Et",
+    en: "LinkedIn Ghost Buster — Detect Ghost Listings"
+};
+
+function changeLang(lang) {
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${lang}`);
+    });
+    document.getElementById('page-title').innerText = titles[lang];
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(`btn-${lang}`).classList.add('active');
+    document.documentElement.lang = lang;
+    localStorage.setItem('prefLang', lang);
+}
+
+window.onload = () => {
+    const browserLang = navigator.language.startsWith('tr') ? 'tr' : 'en';
+    const savedLang = localStorage.getItem('prefLang') || browserLang;
+    changeLang(savedLang);
+};
+</script>
 
 </body>
 </html>
